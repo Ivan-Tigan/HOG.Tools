@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="58ec1cf3-678a-4ef4-bcc3-cd3909fd13f7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/HOG.Tools/Anim.fs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HOG.Tools/BinaryWR.fs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HOG.Tools/Cooldown.fs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HOG.Tools/Ease.fs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HOG.Tools/Lerp.fs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HOG.Tools/Physics.fs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HOG.Tools/Timer.fs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HOG.Tools/Trans.fs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HOG.Tools/TreeZipper.fs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <changedPaths>
+      <option value="$PROJECT_DIR$/HOG.Tools/TreeZipper.fs" />
+      <option value="$PROJECT_DIR$/HOG.Tools/BinaryWR.fs" />
+      <option value="$PROJECT_DIR$/HOG.Tools/Timer.fs" />
+      <option value="$PROJECT_DIR$/HOG.Tools/Anim.fs" />
+      <option value="$PROJECT_DIR$/HOG.Tools/Trans.fs" />
+      <option value="$PROJECT_DIR$/HOG.Tools/Cooldown.fs" />
+      <option value="$PROJECT_DIR$/HOG.Tools/Ease.fs" />
+      <option value="$PROJECT_DIR$/HOG.Tools/Physics.fs" />
+      <option value="$PROJECT_DIR$/HOG.Tools/Lerp.fs" />
+      <option value="$PROJECT_DIR$/HOG.Tools/Library.fs" />
+    </changedPaths>
+  </component>
+  <component name="ProjectId" id="1rQu6ocgI2lxPf8PmTqTMHBNiSN" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="58ec1cf3-678a-4ef4-bcc3-cd3909fd13f7" name="Default Changelist" comment="" />
+      <created>1618920461872</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1618920461872</updated>
+      <workItem from="1618920468047" duration="4008000" />
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
