@@ -1,6 +1,5 @@
 module HOG.Tools.Trans
 open FSharpPlus
-open HOG.Tools.Extras
 open HOG.Tools.Timer
 
 let (>>|) a f = a >> uncurry f

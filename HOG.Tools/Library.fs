@@ -5,8 +5,11 @@ open FSharp.Control.Tasks
 open FixMath.NET
 open FSharpPlus
 open FSharpx.Collections
-
+[<AutoOpen>]
 module Extras =
+    let random_names = [ "Lacy"; "Garfield"; "Sydney"; "David"; "Jamey"; "Arturo"; "Hoyt"; "Leo"; "Bill"; "Donnell"; "Ernie"; "Amado"; "Errol"; "Tory"; "Kirby"; "Galen"; "Joan"; "Elwood"; "Lee"; "Bryce"; "Jerrold"; "Perry"; "Vincent"; "Shirley"; "Sammie"; "Octavio"; "Daryl"; "Elliott"; "Samual"; "Nathanael"; "Elmer"; "Jake"; "Ramiro"; "Kent"; "Bernie"; "Carmine"; "Stan"; "Alvaro"; "Eduardo"; "Omer"; "Jerrod"; "Lino"; "Reggie"; "Efrain"; "Trevor"; "Israel"; "Kory"; "Mac"; "Lanny"; "Pete"; ]
+    let random_name () = random_names.[System.Random().Next() % random_names.Length]
+    
     let randomStr (chars:string) = 
         let charsLen = chars.Length
         let random = System.Random()
@@ -47,6 +50,7 @@ module Extras =
     let inline sign v = if v > fix64.Zero  then fix64.One else -fix64.One
     let (|>|) a f = let _ = f a in a
     let until p f = let rec go x = match () with | _ when p x -> x | _ -> go (f x) in go 
+    let mapfst f (a, b) = (f a, b)
     let mapsnd f (a, b) = (a, f b)
     let fst3 (a,_,_) = a
     let snd3 (_,b,_) = b

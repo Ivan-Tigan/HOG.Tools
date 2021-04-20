@@ -1,6 +1,5 @@
 module HOG.Tools.Timer
 open FixMath.NET
-open Physics
 open HOG.Tools.Extras
 type Timer = Timer of fix64 * fix64 with
     static member mk_timer t t' = Timer(fix64 t, fix64 t') 

@@ -1,7 +1,6 @@
 module HOG.Tools.Ease
 
 open HOG.Tools.Extras
-open Physics
 
 let inline lerp one dt start final = start * (one - dt) + final * dt
 let inline square a = a * a 

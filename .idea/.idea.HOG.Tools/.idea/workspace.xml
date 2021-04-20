@@ -2,15 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58ec1cf3-678a-4ef4-bcc3-cd3909fd13f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/HOG.Tools/Anim.fs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HOG.Tools/BinaryWR.fs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HOG.Tools/Cooldown.fs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HOG.Tools/Ease.fs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HOG.Tools/Lerp.fs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HOG.Tools/Physics.fs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HOG.Tools/Timer.fs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HOG.Tools/Trans.fs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HOG.Tools/TreeZipper.fs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HOG.Tools/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HOG.Tools/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HOG.Tools.1.0.0.nupkg" beforeDir="false" afterPath="$PROJECT_DIR$/HOG.Tools.1.0.0.nupkg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HOG.Tools/Ease.fs" beforeDir="false" afterPath="$PROJECT_DIR$/HOG.Tools/Ease.fs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HOG.Tools/HOG.Tools.fsproj" beforeDir="false" afterPath="$PROJECT_DIR$/HOG.Tools/HOG.Tools.fsproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HOG.Tools/Library.fs" beforeDir="false" afterPath="$PROJECT_DIR$/HOG.Tools/Library.fs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HOG.Tools/Physics.fs" beforeDir="false" afterPath="$PROJECT_DIR$/HOG.Tools/Physics.fs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HOG.Tools/Timer.fs" beforeDir="false" afterPath="$PROJECT_DIR$/HOG.Tools/Timer.fs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HOG.Tools/Trans.fs" beforeDir="false" afterPath="$PROJECT_DIR$/HOG.Tools/Trans.fs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HOG.Tools/bin/Debug/HOG.Tools.dll" beforeDir="false" afterPath="$PROJECT_DIR$/HOG.Tools/bin/Debug/HOG.Tools.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HOG.Tools/bin/Debug/HOG.Tools.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/HOG.Tools/bin/Debug/HOG.Tools.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HOG.Tools/obj/Debug/HOG.Tools.dll" beforeDir="false" afterPath="$PROJECT_DIR$/HOG.Tools/obj/Debug/HOG.Tools.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HOG.Tools/obj/Debug/HOG.Tools.fsproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/HOG.Tools/obj/Debug/HOG.Tools.fsproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HOG.Tools/obj/Debug/HOG.Tools.fsprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/HOG.Tools/obj/Debug/HOG.Tools.fsprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HOG.Tools/obj/Debug/HOG.Tools.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/HOG.Tools/obj/Debug/HOG.Tools.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,14 +29,15 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/HOG.Tools/TreeZipper.fs" />
       <option value="$PROJECT_DIR$/HOG.Tools/BinaryWR.fs" />
-      <option value="$PROJECT_DIR$/HOG.Tools/Timer.fs" />
       <option value="$PROJECT_DIR$/HOG.Tools/Anim.fs" />
-      <option value="$PROJECT_DIR$/HOG.Tools/Trans.fs" />
       <option value="$PROJECT_DIR$/HOG.Tools/Cooldown.fs" />
+      <option value="$PROJECT_DIR$/HOG.Tools/Lerp.fs" />
+      <option value="$PROJECT_DIR$/HOG.Tools/Timer.fs" />
+      <option value="$PROJECT_DIR$/HOG.Tools/Trans.fs" />
       <option value="$PROJECT_DIR$/HOG.Tools/Ease.fs" />
       <option value="$PROJECT_DIR$/HOG.Tools/Physics.fs" />
-      <option value="$PROJECT_DIR$/HOG.Tools/Lerp.fs" />
       <option value="$PROJECT_DIR$/HOG.Tools/Library.fs" />
+      <option value="$PROJECT_DIR$/HOG.Tools/HOG.Tools.fsproj" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1rQu6ocgI2lxPf8PmTqTMHBNiSN" />
@@ -53,7 +59,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1618920461872</updated>
-      <workItem from="1618920468047" duration="4008000" />
+      <workItem from="1618920468047" duration="4345000" />
+      <workItem from="1618937992656" duration="693000" />
     </task>
     <servers />
   </component>
@@ -67,6 +74,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

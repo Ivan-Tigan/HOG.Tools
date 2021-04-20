@@ -1,6 +1,4 @@
 module HOG.Tools.Physics
-open HOG.Tools.Extras
-open FixMath.NET
 open FSharpPlus
 
 [<Struct>]
