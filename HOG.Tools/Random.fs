@@ -12,10 +12,10 @@ type MRandom = private {mutable seed:int}
         r.seed <- n
         n
     member r.rangei min max =
-        let dist = abs min + abs max
-        abs r.nexti % dist - min
-    member r.rangef min max =
-        let min, max = 10000 * min, 10000 * max
+        let dist = max - min
+        (abs r.nexti) % dist + min
+    member r.rangef (min:fix64) (max:fix64) =
+        let min, max = int (fix64 10000 * min), int (fix64 10000 * max)
         let r = r.rangei min max
         fract r 10000
 let mk_mrandom seed = {seed = seed}

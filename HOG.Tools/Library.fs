@@ -9,12 +9,12 @@ open FSharpx.Collections
 module Extras =
     let random_names = [ "Lacy"; "Garfield"; "Sydney"; "David"; "Jamey"; "Arturo"; "Hoyt"; "Leo"; "Bill"; "Donnell"; "Ernie"; "Amado"; "Errol"; "Tory"; "Kirby"; "Galen"; "Joan"; "Elwood"; "Lee"; "Bryce"; "Jerrold"; "Perry"; "Vincent"; "Shirley"; "Sammie"; "Octavio"; "Daryl"; "Elliott"; "Samual"; "Nathanael"; "Elmer"; "Jake"; "Ramiro"; "Kent"; "Bernie"; "Carmine"; "Stan"; "Alvaro"; "Eduardo"; "Omer"; "Jerrod"; "Lino"; "Reggie"; "Efrain"; "Trevor"; "Israel"; "Kory"; "Mac"; "Lanny"; "Pete"; ]
     let random_name () = random_names.[System.Random().Next() % random_names.Length]
-    
-    let randomStr (chars:string) = 
+
+    let randomStr (chars:string) =
         let charsLen = chars.Length
         let random = System.Random()
 
-        fun len -> 
+        fun len ->
             let randomChars = [|for i in 0..len -> chars.[random.Next(charsLen)]|]
             new System.String(randomChars)
 
@@ -46,10 +46,10 @@ module Extras =
     let inline clamp min max a = match () with | _ when a < min -> min | _ when a > max -> max | _ -> a
     let inline between low high v = low <= v && v <= high
     let if' c a b v = if c v then a v else b v
-    let one_over a = fix64.One / fix64 a 
+    let one_over a = fix64.One / fix64 a
     let inline sign v = if v > fix64.Zero  then fix64.One else -fix64.One
     let (|>|) a f = let _ = f a in a
-    let until p f = let rec go x = match () with | _ when p x -> x | _ -> go (f x) in go 
+    let until p f = let rec go x = match () with | _ when p x -> x | _ -> go (f x) in go
     let mapfst f (a, b) = (f a, b)
     let mapsnd f (a, b) = (a, f b)
     let fst3 (a,_,_) = a
@@ -63,7 +63,7 @@ module Extras =
            | false, _ -> let v = fn (x)
                          cache.Add(x,v)
                          v)
-    let inline wrap max n = (n % max + max)%max  
+    let inline wrap max n = (n % max + max)%max
     let uncurry f (a,b) = f a b
     let ordinal i =
         sprintf "%d%s" i <|
@@ -81,4 +81,3 @@ module Extras =
         let (|Ready|Pending|) (t:Task<'a>) = if t.IsCompleted then Ready t.Result else Pending
         let timeout (n:int) (t:Task<'a> list) (f:'a) = task { let! r = (t ++ [task {let! _ = Task.Delay n in return f}]) |> Task.WhenAny in return! r}
         let rec wait_until b = task { if b then () else let! _ = Task.Delay 25 in return! wait_until b }
-    

@@ -3,18 +3,19 @@ open System.IO
 open FSharpPlus.Internals
 open Serializers
 open FixMath.NET
+open HOG.Tools.Physics
 
 type BinaryWR<'a> = {write: BinaryWriter -> 'a -> unit; read: BinaryReader -> 'a}
     let mk_binary_serializer<'o> (s:'o -> BinaryWriter -> unit) d = {
         serialize = fun (o:'o) -> let stream = new MemoryStream() in let writer = new BinaryWriter(stream) in let _ = s o writer in stream.ToArray();
         deserialize = fun bs -> d (new BinaryReader(new MemoryStream(bs))) }
-    let serialize_sized (w:BinaryWriter) (o_ser:'o -> byte []) (o) = let ser = o_ser o in let _ = w.Write(ser.Length) in w.Write (ser) 
-    let mk_binary_wr w r = {write = w; read = r} 
+    let serialize_sized (w:BinaryWriter) (o_ser:'o -> byte []) (o) = let ser = o_ser o in let _ = w.Write(ser.Length) in w.Write (ser)
+    let mk_binary_wr w r = {write = w; read = r}
     let bin_ser_from_wr wr = mk_binary_serializer (fun o w -> wr.write w o) (fun r -> wr.read r)
     let compress (bs:byte[]) (d:int -> unit) = Ionic.Zlib.ZlibStream.CompressBuffer bs
     let decompress (bs:byte []) = Ionic.Zlib.ZlibStream.UncompressBuffer bs
     let (.>>.) b1 b2 = {write = (fun w (o1, o2) -> let _ = b1.write w o1 in let _ = b2.write w o2 in ()); read = fun r -> b1.read r, b2.read r}
-    let bwr_tuple a b = a .>>. b 
+    let bwr_tuple a b = a .>>. b
     let bwr_bind fw fr b = {write = (fun w o -> let _ = b.write w o in (fw o).write w o); read = (fun r -> b.read r |> fun x -> (fr x).read r)}
 //        let bwr_choice c = {write = (fun w o -> (c o).write); read ->  }
     let bwr_string = mk_binary_wr (fun w (o:string) -> w.Write o ) (fun r -> r.ReadString())
@@ -34,4 +35,22 @@ type BinaryWR<'a> = {write: BinaryWriter -> 'a -> unit; read: BinaryReader -> 'a
         mk_binary_wr
             (fun w o -> let ser = pickle_serializer<'a>.serialize o in let _ = w.Write (uint64 ser.Length) in w.Write ser)
             (fun r -> let l = r.ReadInt64() in r.ReadBytes(int l) |> pickle_serializer<'a>.deserialize)
-    let bwr_map enter exit b1 = {write = (fun w o -> enter o |> b1.write w ); read = (fun r -> b1.read r |> exit)}
+    let map_bwr enter exit b1 = {write = (fun w o -> enter o |> b1.write w ); read = (fun r -> b1.read r |> exit)}
+    let bwr_fix64 = mk_binary_wr (fun w (o:fix64) -> w.Write o.m_rawValue  ) (fun r -> r.ReadInt64() |> fix64.FromRaw)
+    let bwr_vec = bwr_fix64 .>>. bwr_fix64 |> map_bwr (function Vec(x,y) -> x,y) Vec
+    let bwr_shape =
+        mk_binary_wr
+            (fun w ->
+                function
+                    | (Circle r) -> let _ = w.Write 0uy in w.Write r.m_rawValue
+                    | Rect(x,y) -> let _ = w.Write 1uy in let _ = w.Write x.m_rawValue in w.Write y.m_rawValue )
+            (fun r ->
+                match r.ReadByte() with
+                | 0uy -> Circle (r.ReadInt64() |> fix64.FromRaw)
+                | 1uy -> Rect(r.ReadInt64() |> fix64.FromRaw, r.ReadInt64() |> fix64.FromRaw)
+                )
+    let bwr_body =
+        bwr_vec .>>. bwr_vec .>>. bwr_shape |> map_bwr
+               (fun (b:Body) -> ((b.position, b.velocity), b.area))
+               (fun ((p,v),a) -> {position = p; velocity = v; area = a})
+    let bwr_timer = bwr_fix64 .>>. bwr_fix64 |> map_bwr (function Timer.Timer(t1,t2) -> t1,t2) Timer.Timer
