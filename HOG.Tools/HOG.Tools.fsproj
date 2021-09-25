@@ -1,105 +1,38 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-    <Import Project="..\packages\FSharp.Compiler.Tools.10.0.2\build\FSharp.Compiler.Tools.props" Condition="Exists('..\packages\FSharp.Compiler.Tools.10.0.2\build\FSharp.Compiler.Tools.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
     <PropertyGroup>
-        <Authors>Higher Order Games</Authors>
-        <Description>Deterministic Game Development Tools</Description>
-        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{E810512B-F6A6-435B-8F21-C92CC3E72674}</ProjectGuid>
-        <OutputType>Library</OutputType>
-        <Version>1.0.7</Version>
-        <RootNamespace>HOG.Tools</RootNamespace>
-        <AssemblyName>HOG.Tools</AssemblyName>
-        <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <WarnOn>3390;$(WarnOn)</WarnOn>
+        <TargetFrameworks>net472;net5.0;netstandard2.0</TargetFrameworks>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageVersion>2.0.0</PackageVersion>
+        <Authors>vankata</Authors>
     </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-        <DebugSymbols>true</DebugSymbols>
-        <DebugType>portable</DebugType>
-        <Optimize>false</Optimize>
-        <Tailcalls>false</Tailcalls>
-        <OutputPath>bin\$(Configuration)\</OutputPath>
-        <DefineConstants>DEBUG;TRACE</DefineConstants>
-        <WarningLevel>3</WarningLevel>
-        <OtherFlags>--warnon:1182</OtherFlags>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-        <DebugType>pdbonly</DebugType>
-        <Optimize>true</Optimize>
-        <Tailcalls>true</Tailcalls>
-        <OutputPath>bin\$(Configuration)\</OutputPath>
-        <DefineConstants>TRACE</DefineConstants>
-        <WarningLevel>3</WarningLevel>
-        <OtherFlags>--warnon:1182</OtherFlags>
-    </PropertyGroup>
+
     <ItemGroup>
-        <Reference Include="FixMath.NET, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\packages\FixMath.NET.1.0.0\lib\net472\FixMath.NET.dll</HintPath>
-          <Private>True</Private>
-        </Reference>
-        <Reference Include="FSharp.Core, Version=4.6.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-          <HintPath>..\packages\FSharp.Core.4.6.2\lib\net45\FSharp.Core.dll</HintPath>
-          <Private>True</Private>
-        </Reference>
-        <Reference Include="FSharpPlus, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\packages\FSharpPlus.1.2.0-CI01971\lib\net45\FSharpPlus.dll</HintPath>
-          <Private>True</Private>
-        </Reference>
-        <Reference Include="FSharpx.Collections, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\packages\FSharpx.Collections.2.1.3\lib\net45\FSharpx.Collections.dll</HintPath>
-          <Private>True</Private>
-        </Reference>
-        <Reference Include="FSharpx.Collections.Experimental, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\packages\FSharpx.Collections.Experimental.2.1.3\lib\net45\FSharpx.Collections.Experimental.dll</HintPath>
-          <Private>True</Private>
-        </Reference>
-        <Reference Include="FsPickler, Version=5.3.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\packages\FsPickler.5.3.0\lib\net45\FsPickler.dll</HintPath>
-          <Private>True</Private>
-        </Reference>
-        <Reference Include="HOG.Serializers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\packages\HOG.Serializers.1.0.0\lib\net472\HOG.Serializers.dll</HintPath>
-          <Private>True</Private>
-        </Reference>
-        <Reference Include="Ionic.Zlib.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\packages\Ionic.Zlib.Core.1.0.0\lib\netstandard2.0\Ionic.Zlib.Core.dll</HintPath>
-          <Private>True</Private>
-        </Reference>
-        <Reference Include="mscorlib" />
-        <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
-          <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-          <Private>True</Private>
-        </Reference>
-        <Reference Include="System" />
-        <Reference Include="System.Core" />
-        <Reference Include="System.Numerics" />
-        <Reference Include="System.Runtime" />
-        <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
-          <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net47\System.ValueTuple.dll</HintPath>
-          <Private>True</Private>
-        </Reference>
-        <Reference Include="TaskBuilder.fs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\packages\TaskBuilder.fs.2.2.0-alpha\lib\net47\TaskBuilder.fs.dll</HintPath>
-          <Private>True</Private>
-        </Reference>
-    </ItemGroup>
-    <ItemGroup>
-        <Compile Include="AssemblyInfo.fs" />
         <Compile Include="Library.fs" />
-        <None Include="Script.fsx" />
-        <Content Include="packages.config" />
-        <Compile Include="TreeZipper.fs" />
         <Compile Include="Physics.fs" />
-        <Compile Include="Timer.fs" />
-        <Compile Include="Anim.fs" />
-        <Compile Include="Trans.fs" />
-        <Compile Include="Cooldown.fs" />
+        <Compile Include="AssemblyInfo.fs" />
         <Compile Include="Ease.fs" />
+        <Compile Include="Timer.fs" />
         <Compile Include="Lerp.fs" />
-        <Compile Include="BinaryWR.fs" />
+        <None Include="Script.fsx" />
+        <Compile Include="Anim.fs" />
         <Compile Include="Random.fs" />
+        <Compile Include="Cooldown.fs" />
+        <Compile Include="TreeZipper.fs" />
+        <Compile Include="Trans.fs" />
+        <Compile Include="BinaryWR.fs" />
     </ItemGroup>
-    <Import Project="$(FSharpTargetsPath)" Condition="Exists('$(FSharpTargetsPath)')" />
+
+    <ItemGroup>
+      <PackageReference Include="FixMath.NET" Version="2.0.0" />
+      <PackageReference Include="FSharpPlus" Version="1.2.1" />
+      <PackageReference Include="FSharpx.Collections" Version="2.1.3" />
+      <PackageReference Include="FSharpx.Collections.Experimental" Version="2.1.3" />
+      <PackageReference Include="HOG.Serializers" Version="2.0.0" />
+      <PackageReference Include="Ionic.Zlib.Core" Version="1.0.0" />
+      <PackageReference Include="TaskBuilder.fs" Version="2.2.0-alpha" />
+    </ItemGroup>
+
 </Project>
